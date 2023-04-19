@@ -1,0 +1,21 @@
+/* Largeur et hauteur de la scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Fond de la scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+/* Couleur de la poignée de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+/* Couleur de la poignée de la scrollbar au survol */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}

@@ -1,0 +1,75 @@
+/* Container pour les boutons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Boutons */
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2%;
+}
+
+/* Changement de couleur de fond au survol des boutons */
+.button:hover {
+    background-color: #004066;
+}
+
+/* Conteneur des films */
+.films-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+/* Carte de film */
+.film-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: all 0.3s ease;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/* Changement de couleur de fond au survol de la carte de film */
+.film-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Affichage de l'image de film */
+.film-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Titre de film */
+.film-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Résumé de film */
+.film-overview {
+    font-size: 14px;
+    margin-top: 10px;
+}
