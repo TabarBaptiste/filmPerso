@@ -6,6 +6,7 @@ import { MovieDetailsComponent } from './component/movie-details/movie-details.c
 import { FavorisComponent } from './component/favoris/favoris.component';
 import { FilmsVenirComponent } from './component/films-venir/films-venir.component';
 import { GenreFilmsComponent } from './component/genre-films/genre-films.component';
+import { AnneeComponent } from './component/annee/annee.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path: 'favoris', component: FavorisComponent},
     { path: 'avenir', component: FilmsVenirComponent},
     { path: 'movie/:id', component: MovieDetailsComponent },
-    { path: 'genre', component: GenreFilmsComponent }
+    { path: 'genre', component: GenreFilmsComponent },
+    { path: 'annee', component: AnneeComponent }
 ];
 
 @NgModule({

@@ -14,6 +14,7 @@ import { FavorisComponent } from './component/favoris/favoris.component';
 import { FilmsVenirComponent } from './component/films-venir/films-venir.component';
 import { FormsModule } from '@angular/forms';
 import { GenreFilmsComponent } from './component/genre-films/genre-films.component';
+import { AnneeComponent } from './component/annee/annee.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GenreFilmsComponent } from './component/genre-films/genre-films.compone
     FavorisComponent,
     FilmsVenirComponent,
     GenreFilmsComponent,
+    AnneeComponent,
   ],
   imports: [
     BrowserModule,

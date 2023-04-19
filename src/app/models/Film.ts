@@ -26,6 +26,12 @@ export interface Film {
   vote_count: number;
 }
 
+export interface Actor {
+  name: string;
+  character: string;
+  profile_path: string | null;
+}
+
 /*export interface Film {
   release_date: any;
   id: number;
@@ -37,8 +43,4 @@ export interface Film {
   genres: { id: number, name: string }[];
 }
 
-export interface Actor {
-  name: string;
-  character: string;
-}
 */

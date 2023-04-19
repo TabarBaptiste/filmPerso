@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Film } from '../models/Film';
+import { Film, Actor } from '../models/Film';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
 
@@ -10,9 +10,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class RecupFilmsService {
-  searchMovies(query: string) {
-    throw new Error('Method not implemented.');
-  }
 
   // Initialise le favo avec le contenu stocké dans le localStorage
   private favo: Film[] = JSON.parse(localStorage.getItem('favo') || '[]');
@@ -35,9 +32,24 @@ export class RecupFilmsService {
     return this.http.get(environment.apiBaseUrl + `person/${id}?api_key=` + environment.keyAPI);
   }
 
+  getActeurByFilm(idFilm: number): Observable<Actor[]> {
+    return this.http.get<Film>(environment.apiBaseUrl + `/movie/${idFilm}/credits?api_key=` + environment.keyAPI)
+      .pipe(
+        map((data: any) => data.cast),
+      );
+  }
+
+  getFilmsByYear(year: number): Observable<Film[]> {
+    return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&language=fr-FR&sort_by=popularity.desc&primary_release_year=` + year)
+    .pipe(
+      map((annee: any) => annee.results),
+    );
+  }
+
   getDetailsImage(id: number): Observable<any> {
     return this.http.get(environment.apiBaseUrl + `image/${id}?api_key=` + environment.keyAPI);
   }
+
   // Méthode pour récupérer la liste des 4 films populaires à partir de l'API TMDb
   getQuatrePopulaires(): Observable<Film[]> {
     return this.http.get(environment.apiBaseUrl + 'movie/popular?api_key=' + environment.keyAPI)
@@ -102,24 +114,25 @@ export class RecupFilmsService {
   }
 
   getFilmsParGenre(genreId: number): Observable<Film[]> {
-    return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + genreId).pipe(
+    return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + genreId)
+    .pipe(
       map((data: any) => data.results),
     );
   }
 
-  getFilmsAction(genreId: number): Observable<Film[]> {
+  getFilmsAction(): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + 28).pipe(
       map((data: any) => data.results),
     );
   }
 
-  getFilmsAnimation(genreId: number): Observable<Film[]> {
+  getFilmsAnimation(): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + 16).pipe(
       map((data: any) => data.results),
     );
   }
 
-  getFilmsBoo(genreId: number): Observable<Film[]> {
+  getFilmsBoo(): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + 27).pipe(
       map((data: any) => data.results),
     );

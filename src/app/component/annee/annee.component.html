@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Films de {{annee}}</h1>
+      <div class="button-group">
+        <button class="btn btn-primary precedent" (click)="previousYear()">Précédent</button>
+        <button class="btn btn-primary" (click)="nextYear()">Suivant</button>
+      </div>
+      <ul class="list-unstyled">
+        <li *ngFor="let film of films">
+          <div class="card">
+            <a [routerLink]="['/details', film.id]"><img src="{{'https://image.tmdb.org/t/p/w500'+film.poster_path}}"
+                alt="{{film.title}}" class="card-img-top rounded"></a>
+            <div class="card-body">
+              <h5 class="card-title">{{film.title}}</h5>
+              <p class="card-text">{{film.release_date}}</p>
+            </div>
+            <!--
+                <button class="btn btn-primary" (click)="showDetails(film.id)">Description</button>
+              <div class="col-md-4 align-self-center" *ngIf="film.id === selectedFilmId">
+                <p>{{selectedFilmOverview}}</p>
+              </div>
+            -->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
