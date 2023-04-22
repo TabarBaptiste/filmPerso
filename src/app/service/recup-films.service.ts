@@ -41,9 +41,9 @@ export class RecupFilmsService {
 
   getFilmsByYear(year: number): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&language=fr-FR&sort_by=popularity.desc&primary_release_year=` + year)
-    .pipe(
-      map((annee: any) => annee.results),
-    );
+      .pipe(
+        map((annee: any) => annee.results),
+      );
   }
 
   getDetailsImage(id: number): Observable<any> {
@@ -57,13 +57,19 @@ export class RecupFilmsService {
         map((resultat: any) => resultat.results.slice(0, 4))
       );
   }
-
+  
+  getFilms(page: number): Observable<Film[]> {
+    return this.http.get<Film[]>(environment.apiBaseUrl + 'movie/popular?api_key=' + environment.keyAPI + `&page=` + page)
+      .pipe(
+        map((page: any) => page.results)
+      );
+  }
   /*getFilms(): Observable<Film[]> {
     const url = `${environment.apiBaseUrl}movie/popular?api_key=${environment.keyAPI}&language=en-US&page=1`;
     return this.http.get<Film[]>(url);
   }
 
-  searchFilms(query: string): Observable<Film[]> {
+  /*searchFilms(query: string): Observable<Film[]> {
     const url = `${environment.apiBaseUrl}search/movie?api_key=${environment.keyAPI}&language=en-US&page=1&include_adult=false&query=${query}`;
     return this.http.get<Film[]>(url);
   }*/
@@ -115,9 +121,9 @@ export class RecupFilmsService {
 
   getFilmsParGenre(genreId: number): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + genreId)
-    .pipe(
-      map((data: any) => data.results),
-    );
+      .pipe(
+        map((data: any) => data.results),
+      );
   }
 
   getFilmsAction(): Observable<Film[]> {
