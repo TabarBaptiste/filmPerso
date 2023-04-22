@@ -47,3 +47,8 @@
 .cart i {
   margin-right: 10px;
 }
+
+.nav-links li a.active {
+  border: 2px solid white;
+  border-radius: 10px;
+}
