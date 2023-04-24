@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
-
-div {
+.favori {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -14,7 +13,6 @@ div {
 }
 
 h3 {
-  font-family: 'Noto Sans JP';
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -26,9 +24,10 @@ p {
 }
 
 img {
-  width: 300px;
-  height: 450px;
+  width: 60px;
+  height: auto;
   margin-bottom: 10px;
+  border-radius: 7%;
 }
 
 button {
@@ -42,5 +41,36 @@ button {
 }
 
 button:hover {
-  background-color: #8f22f5; /* Couleur de fond au survol */
+  background-color: #8f22f5;
+  /* Couleur de fond au survol */
+}
+
+.mage {
+  width: 20%;
+}
+
+.col-md-12 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(0, 98, 255);
+  transform: scale(1.05);
+}
+
+img {
+  max-width: 60%;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

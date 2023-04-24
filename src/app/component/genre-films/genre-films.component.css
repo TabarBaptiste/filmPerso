@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    overflow-x: scroll;
 }
 
 /* Boutons */
@@ -20,6 +21,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 /* Changement de couleur de fond au survol des boutons */

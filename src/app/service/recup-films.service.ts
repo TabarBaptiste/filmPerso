@@ -11,10 +11,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RecupFilmsService {
 
-  // Initialise le favo avec le contenu stocké dans le localStorage
-  private favo: Film[] = JSON.parse(localStorage.getItem('favo') || '[]');
-  // Initialise un BehaviorSubject avec le contenu du favo
-  private favoSubject: BehaviorSubject<Film[]> = new BehaviorSubject<Film[]>(this.favo);
+  private favo: Film[] = JSON.parse(localStorage.getItem('favo') || '[]');  // Initialise le favo avec le contenu stocké dans le localStorage
+  private favoSubject: BehaviorSubject<Film[]> = new BehaviorSubject<Film[]>(this.favo);  // Initialise un BehaviorSubject avec le contenu du favo
 
   constructor(private http: HttpClient) { }
 
@@ -57,22 +55,13 @@ export class RecupFilmsService {
         map((resultat: any) => resultat.results.slice(0, 4))
       );
   }
-  
+
   getFilms(page: number): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + 'movie/popular?api_key=' + environment.keyAPI + `&page=` + page)
       .pipe(
         map((page: any) => page.results)
       );
   }
-  /*getFilms(): Observable<Film[]> {
-    const url = `${environment.apiBaseUrl}movie/popular?api_key=${environment.keyAPI}&language=en-US&page=1`;
-    return this.http.get<Film[]>(url);
-  }
-
-  /*searchFilms(query: string): Observable<Film[]> {
-    const url = `${environment.apiBaseUrl}search/movie?api_key=${environment.keyAPI}&language=en-US&page=1&include_adult=false&query=${query}`;
-    return this.http.get<Film[]>(url);
-  }*/
 
   // Méthode pour récupérer la liste des films à venir à partir de l'API TMDb
   getFilmsAVenir(): Observable<Film[]> {
@@ -126,7 +115,7 @@ export class RecupFilmsService {
       );
   }
 
-  getFilmsAction(): Observable<Film[]> {
+  /*getFilmsAction(): Observable<Film[]> {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + 28).pipe(
       map((data: any) => data.results),
     );
@@ -142,6 +131,6 @@ export class RecupFilmsService {
     return this.http.get<Film[]>(environment.apiBaseUrl + `/discover/movie?api_key=` + environment.keyAPI + `&with_genres=` + 27).pipe(
       map((data: any) => data.results),
     );
-  }
+  }*/
 
 }

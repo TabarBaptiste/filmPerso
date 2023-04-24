@@ -10,8 +10,6 @@ import { Film } from '../../models/Film';
 export class AnneeComponent implements OnInit {
   annee: number = 2022;
   films: Film[] = [];
-  /*selectedFilmId: number | undefined;
-  selectedFilmOverview: string | undefined;*/
 
   constructor(private recupFilmsService: RecupFilmsService) {}
 
@@ -20,13 +18,6 @@ export class AnneeComponent implements OnInit {
       this.films = data;
     });
   }
-
-  /*showDetails(id: number): void {
-    this.recupFilmsService.getDetailsFilm(id).subscribe((data) => {
-      this.selectedFilmId = id;
-      this.selectedFilmOverview = data.overview;
-    });
-  }*/
 
   previousYear() {
     this.annee--;

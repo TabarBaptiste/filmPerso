@@ -10,6 +10,7 @@
     /* Couleur de fond semi-transparente */
     margin-bottom: 2%;
     margin-top: 5%;
+    width: 95%;
 }
 
 .container-fluid:hover {

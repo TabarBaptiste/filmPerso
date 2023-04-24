@@ -19,8 +19,6 @@ export class FavorisComponent implements OnInit {
     if (favo) {
       this.favo = JSON.parse(favo);
       //this.recupFilmsService.sortFilmsAlphabetically(this.favo); // Appeler la méthode de tri alphabétique du service
-      console.log(this.favo);
-      console.log("Bien envoyé")
     }
   }
 

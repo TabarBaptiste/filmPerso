@@ -1,3 +1,41 @@
+<div class="test">
+  <div class="favori">
+    <div *ngIf="favo.length === 0">
+      <p>Aucun film n'a été ajouté aux favoris pour le moment.</p>
+    </div>
+
+    <div *ngIf="favo.length > 0">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Liste des films favoris</h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Image</th>
+                <th scope="col">Note</th>
+                <th scope="col">Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let film of favo">
+                <td><a [routerLink]="['/details', film.id]">{{ film.title }}</a></td>
+                <td class="mage"><a [routerLink]="['/details', film.id]"><img
+                      src="{{'https://image.tmdb.org/t/p/w500'+film.poster_path}}" alt="{{film.title}}"
+                      class="img-fluid rounded"></a></td>
+                <td>{{ film.vote_average }}/10</td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="supprimerFilmFavori(film)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
 <div *ngFor="let movie of favo">
   <h3>{{ movie.title }}</h3>
   <p>{{ movie.overview }}</p>
@@ -5,3 +43,4 @@
   <button (click)="supprimerFilmFavori(movie)">Supprimer des favoris</button>
   <br>
 </div>
+-->

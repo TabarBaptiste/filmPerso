@@ -1,34 +1,29 @@
 <div class="button-container">
     <button class="button" (click)="loadFilmsAction()">Action</button>
+    <button class="button" (click)="loadFilmsAdventure()">Adventure</button>
     <button class="button" (click)="loadFilmsAnimation()">Animation</button>
-    <button class="button" (click)="loadFilmsHorreur()">Horreur</button>
+    <button class="button" (click)="loadFilmsComedy()">Comedy</button>
+    <button class="button" (click)="loadFilmsCrime()">Crime</button>
+    <button class="button" (click)="loadFilmsDocumentary()">Documentary</button>
+    <button class="button" (click)="loadFilmsDrama()">Drama</button>
+    <button class="button" (click)="loadFilmsFamily()">Family</button>
+    <button class="button" (click)="loadFilmsFantasy()">Fantasy</button>
+    <button class="button" (click)="loadFilmsHistory()">History</button>
+    <button class="button" (click)="loadFilmsHorreur()">Horror</button>
+    <button class="button" (click)="loadFilmsMusic()">Music</button>
+    <button class="button" (click)="loadFilmsMystery()">Mystery</button>
+    <button class="button" (click)="loadFilmsRomance()">Romance</button>
+    <button class="button" (click)="loadFilmsScienceFiction()">Science Fiction</button>
+    <button class="button" (click)="loadFilmsTVMovie()">TV Movie</button>
+    <!--<button class="button" (click)="loadFilmsThriller()">Thriller</button>
+    <button class="button" (click)="loadFilmsWar()">War</button>
+    <button class="button" (click)="loadFilmsWestern()">Western</button>-->
 </div>
 
 <div class="films-container">
-    <div *ngIf="selectedCategory === 'action'">
-        <div *ngFor="let film of actions" class="film-card">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}"
-                class="film-poster">
-            <div class="film-title">{{ film.title }}</div>
-            <div class="film-overview">{{ film.overview }}</div>
-        </div>
-    </div>
-
-    <div *ngIf="selectedCategory === 'animation'">
-        <div *ngFor="let film of animation" class="film-card">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}"
-                class="film-poster">
-            <div class="film-title">{{ film.title }}</div>
-            <div class="film-overview">{{ film.overview }}</div>
-        </div>
-    </div>
-
-    <div *ngIf="selectedCategory === 'horreur'">
-        <div *ngFor="let film of horreur" class="film-card">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}"
-                class="film-poster">
-            <div class="film-title">{{ film.title }}</div>
-            <div class="film-overview">{{ film.overview }}</div>
-        </div>
+    <div *ngFor="let film of films" class="film-card">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}" class="film-poster">
+        <div class="film-title">{{ film.title }}</div>
+        <div class="film-overview">{{ film.overview }}</div>
     </div>
 </div>

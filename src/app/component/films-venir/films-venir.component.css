@@ -19,13 +19,13 @@
     max-width: 60%;
     border-radius: 10px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .list-unstyled li img:hover {
+}
+
+.list-unstyled li img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
+}
+
 
 .list-unstyled li h3 {
     font-size: 24px;
