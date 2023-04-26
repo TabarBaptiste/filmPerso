@@ -8,7 +8,7 @@ import { Film } from '../../models/Film';
   styleUrls: ['./annee.component.css']
 })
 export class AnneeComponent implements OnInit {
-  annee: number = 2022;
+  annee: number = new Date().getFullYear();
   films: Film[] = [];
 
   constructor(private recupFilmsService: RecupFilmsService) {}

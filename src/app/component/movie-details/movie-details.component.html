@@ -6,12 +6,15 @@
         <p>{{ movie.overview }}</p>
         <p><strong>Date de sortie : </strong>{{ movie.release_date }}</p>
         <p><strong>Note : </strong>{{ movie.vote_average }}/10</p>
-        <p><strong>Revenu : {{ movie.revenue  }}€</strong></p>
+        <p><strong>Revenu : {{ movie.revenue }}€</strong></p>
       </div>
     </div>
     <div class="col-md-6">
       <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}" />
-      <br><button type="button" class="btn btn-warning" [routerLink]="['/favoris']" (click)="addToFavorites(movie)">Ajouter aux favoris</button><br>
+      <br>
+      <button type="button" class="btn" [ngClass]="{'btn-danger': item, 'btn-warning': !item}" (click)="addToFavorites(movie)">
+        {{ item ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+      </button>
     </div>
   </div>
 </div>

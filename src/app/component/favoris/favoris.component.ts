@@ -22,13 +22,17 @@ export class FavorisComponent implements OnInit {
     }
   }
 
-  supprimerFilmFavori(leFilm: any): void {
-    const index = this.favo.indexOf(leFilm);
-    if (index !== -1) {
-      this.favo.splice(index, 1);
-      localStorage.setItem('favo', JSON.stringify(this.favo));
-      this.favoSubject.next(this.favo);
+  supprimerFilmFavori(film: Film): void {
+    // Afficher la boîte de dialogue pour confirmer la suppression
+    if (confirm("Supprimez le film des favoris ?")) {
+      // Supprimer le film des favoris
+      const index = this.favo.indexOf(film);
+      if (index !== -1) {
+        this.favo.splice(index, 1);
+        localStorage.setItem('favo', JSON.stringify(this.favo));
+        this.favoSubject.next(this.favo);
+      }
     }
   }
-
+  
 }

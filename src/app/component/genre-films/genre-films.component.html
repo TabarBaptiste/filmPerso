@@ -22,7 +22,7 @@
 
 <div class="films-container">
     <div *ngFor="let film of films" class="film-card">
-        <img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}" class="film-poster">
+        <a [routerLink]="['/details', film.id]"><img [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" alt="{{ film.title }}" class="film-poster"></a>
         <div class="film-title">{{ film.title }}</div>
         <div class="film-overview">{{ film.overview }}</div>
     </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
 .movie-details {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;
@@ -22,9 +22,14 @@ img {
   color: #fff;
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
+  transition: background-color 0.4s ease-in-out;
 }
 
-.row{
+.movie-details .haut:hover{
+  background-color: #000000;
+}
+
+.row {
   margin-top: 2%;
   margin-bottom: 1%;
 }

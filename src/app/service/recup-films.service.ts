@@ -90,6 +90,19 @@ export class RecupFilmsService {
     return false;
   }
 
+  supprimerFilmFavori(film: any): void {
+    let favo: any = localStorage.getItem('favo');
+    if (favo) {
+      let favoArray = JSON.parse(favo);
+      const index = favoArray.findIndex((f: any) => f.id === film.id);
+      if (index !== -1) {
+        favoArray.splice(index, 1);
+        localStorage.setItem('favo', JSON.stringify(favoArray));
+      }
+    }
+  }
+  
+
   sortFilmsAlphabetically(films: Film[]): Film[] {
     return films.sort((a, b) => {
       const titleA = a.title.toUpperCase();

@@ -10,7 +10,9 @@
         <li *ngFor="let film of films">
           <div class="card">
             <a [routerLink]="['/details', film.id]"><img src="{{'https://image.tmdb.org/t/p/w500'+film.poster_path}}"
-                alt="{{film.title}}" class="card-img-top rounded"></a>
+                alt="{{film.title}}" class="card-img-top rounded"
+                onerror="this.onerror=null;this.src='https://via.placeholder.com/500x750?text=Pas+d%27image+pour+le+moment';">
+            </a>
             <div class="card-body">
               <h5 class="card-title">{{film.title}}</h5>
               <p class="card-text">{{film.release_date}}</p>

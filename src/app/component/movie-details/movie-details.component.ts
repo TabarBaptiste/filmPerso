@@ -16,19 +16,21 @@ export class MovieDetailsComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.recupFilmsService.getDetailsFilm(id).subscribe((data) => {
       this.movie = data;
+      this.item = this.recupFilmsService.checkFilmFavori(this.movie);
     });
   }
 
   addToFavorites(movie: any) {
-    const isPresent = this.recupFilmsService.checkFilmFavori(movie);
-    if (!isPresent) {
-      this.recupFilmsService.ajouterFilmFavori(movie);
-      alert('Le film a été ajouté à vos favoris.');
+    if (this.item) {
+      if (confirm("Supprimez le film des favoris ?")) {
+        this.recupFilmsService.supprimerFilmFavori(movie);
+        this.item = false;
+      }
     } else {
-      alert('Le film est déjà présent dans vos favoris.');
+      if (confirm("Ajouter le film aux favoris ?")) {
+        this.recupFilmsService.ajouterFilmFavori(movie);
+        this.item = true;
+      }
     }
-  }  
+  }
 }
-
-
-
