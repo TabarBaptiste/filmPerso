@@ -7,6 +7,7 @@ import { FavorisComponent } from './component/favoris/favoris.component';
 import { FilmsVenirComponent } from './component/films-venir/films-venir.component';
 import { GenreFilmsComponent } from './component/genre-films/genre-films.component';
 import { AnneeComponent } from './component/annee/annee.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
     { path: 'avenir', component: FilmsVenirComponent},
     { path: 'movie/:id', component: MovieDetailsComponent },
     { path: 'genre', component: GenreFilmsComponent },
-    { path: 'annee', component: AnneeComponent }
+    { path: 'annee', component: AnneeComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

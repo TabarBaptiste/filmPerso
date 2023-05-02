@@ -15,6 +15,7 @@ import { FilmsVenirComponent } from './component/films-venir/films-venir.compone
 import { FormsModule } from '@angular/forms';
 import { GenreFilmsComponent } from './component/genre-films/genre-films.component';
 import { AnneeComponent } from './component/annee/annee.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AnneeComponent } from './component/annee/annee.component';
     FilmsVenirComponent,
     GenreFilmsComponent,
     AnneeComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
