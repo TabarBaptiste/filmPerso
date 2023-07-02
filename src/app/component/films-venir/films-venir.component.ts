@@ -14,15 +14,19 @@ export class FilmsVenirComponent implements OnInit {
   selectedFilmOverview: string | undefined;
   selectedFilmActors: any[] = [];
   movie: any
+  page: number = 1;
 
   constructor(private recupFilmsService: RecupFilmsService) { }
 
   ngOnInit(): void {
     this.recupFilmsService.getFilmsAVenir().subscribe((films: Film[]) => {
-      this.filmsAVenir = films;
+      // Filtrer les films à venir (ceux dont la date de sortie est après la date actuelle)
+      const dateActuelle = new Date();
+      this.filmsAVenir = films.filter(film => new Date(film.release_date) > dateActuelle);
+      console.log(this.filmsAVenir)
     });
   }
-  
+
   showDetails(id: number): void {
     this.recupFilmsService.getDetailsFilm(id).subscribe((data) => {
       this.selectedFilmId = id;

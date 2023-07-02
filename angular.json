@@ -67,10 +67,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MovieLDV:build:production"
+              "browserTarget": "MovieLDV:build:production",
+              "host": "0.0.0.0"
             },
             "development": {
-              "browserTarget": "MovieLDV:build:development"
+              "browserTarget": "MovieLDV:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

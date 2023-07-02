@@ -3,6 +3,7 @@
     <a routerLink="/">Movie-LDV</a>
   </div>
   <ul class="nav-links">
+    <li class="heure">{{ currentDate | date: 'dd/MM/yyyy HH:mm:ss' || 'En attente...' }}</li>
     <li><a routerLink="/list" routerLinkActive="active">Films du moment</a></li>
     <li><a routerLink="/favoris" routerLinkActive="active">Favoris</a></li>
     <li><a routerLink="/avenir" routerLinkActive="active">A venir</a></li>
