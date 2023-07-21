@@ -47,9 +47,34 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.precedent{
+.precedent {
     margin-right: 0.5%;
 }
+
 .button-group {
     margin-bottom: 1%;
+}
+
+/* annee.component.css */
+
+/* Style pour le champ d'entrée yearInput */
+#yearInput {
+    font-size: 2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 140px;
+}
+
+/* Style pour le champ d'entrée yearInput lorsqu'il est en focus */
+#yearInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Style pour le champ d'entrée yearInput lorsqu'il est désactivé */
+#yearInput:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
 }
